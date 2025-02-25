@@ -1,9 +1,9 @@
 <?php
    
-    class TarefaView {
+    class UsuarioView {
         private $controlador,$retorno;
         function __construct ($uri, $metodo){
-            $this ->controlador = new TarefaController();
+            $this ->controlador = new UsuarioController();
             $retorno = $this->controlador->despachar($uri,$metodo);
             
             if(count($uri)==1){
@@ -15,38 +15,30 @@
             }
             elseif(count($uri)==2){
                 if($metodo == 'GET')
-                return $this -> get($retorno);//fazer retorno
+                return $this -> get($retorno);
             
                 elseif ($metodo == 'PUT')
                 return  $this -> put($retorno);
                 
                 elseif ($metodo == 'DELETE')
-                return  $this -> delete($retorno);
-                
-            }
-            
-           
+                return  $this -> delete($retorno);  
+            }           
         }
-        function listar ($tarefa){
-            echo "<br>----------------Tarefas Cadastradas:----------------<br>";
-
-        $items = count($tarefa);
-
-        for($num = 0; $num < $items; $num += 1){
-            echo  $tarefa[$num]['id_task']." | ";
-            echo  $tarefa[$num]['nome_task']." | ";
-            echo  $tarefa[$num]['descricao']." | ";
-            echo  $tarefa[$num]['data_inicio']." | ";
-            echo  $tarefa[$num]['data_fim']." | ";
-            echo  $tarefa[$num]['dataFimEstimada']. " | <br>";
-        }}
+        function listar ($usuario){
+            echo "<br>----------------Usuarios Cadastrados:----------------<br>";
+            $items = count($usuario);
+            for($num = 0; $num < $items; $num += 1){
+                echo  $usuario[$num]['id_user']." | ";
+                echo  $usuario[$num]['nome_user']." | <br> ";   
+            }
+        }
         function post ($valor){
             echo "<br>Post | Cadastrar |";
            
             if($valor){
-                echo "<br> Cadastro de nova Tarefa realizado com sucesso!";
+                echo "<br> Cadastro de novo Usuario realizado com sucesso!";
             }else{
-                echo "<br> Erro ao tentar cadastrar a nova tarefa.";
+                echo "<br> Erro ao tentar cadastrar a novo usuario.";
             }
         }
         function put ($valor){
@@ -63,30 +55,16 @@
                 echo "<br> Sucesso! ID: __ deletado.";
             }else{
                 echo "<br> Erro!";
-            }
-            
+            }  
         }
-        function get ($tarefa){
+        function get ($usuario){
             
-            foreach($tarefa as $task){
+            foreach($usuario as $task){
                 echo "<br>";
-                echo  $task['id_task']." | ";
-                echo  $task['nome_task']." | ";
-                echo  $task['descricao']." | ";
-                echo  $task['data_inicio']." | ";
-                echo  $task['data_fim']." | ";
-                echo  $task['dataFimEstimada']. " | <br>";
+                echo  $task['id_user']." | ";
+                echo  $task['nome_user']." |<br> ";
                }
-            
         }
+    
     }
-
-
-
-
-
-
-
-
-
 ?>

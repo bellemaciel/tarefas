@@ -12,7 +12,7 @@
               
             }catch(PDOException $e)
             {
-                die ("Erro");
+                die ("Erro".$e);
             }
             
 

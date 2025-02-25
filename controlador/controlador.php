@@ -8,18 +8,18 @@
             if($metodo == 'GET')
                return $this -> listar();
             elseif ($metodo == 'POST')
-                $this -> post();
+                return $this -> post();
             
         }
         elseif(count($uri)==2){
             if($metodo == 'GET')
-            $this -> get($uri[1]);//fazer retorno
+            return $this -> get($uri[1]);//fazer retorno
         
             elseif ($metodo == 'PUT')
-                $this -> put($uri[1]);
+                return $this -> put($uri[1]);
             
             elseif ($metodo == 'DELETE')
-                $this -> delete($uri[1]);
+                return $this -> delete($uri[1]);
             
         }
     }

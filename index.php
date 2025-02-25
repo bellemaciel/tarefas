@@ -1,5 +1,6 @@
 <?php
 	require_once "views/tarefa.php";
+	require_once "views/usuario.php";
 	require_once "controlador/controlador.php";
 	require_once "controlador/conexao.php";
 	require_once "controlador/tarefa.php";
@@ -39,29 +40,6 @@
 	catch (Exception $e){
 		echo "Página não encontrada!";
 	}
-	/*
-	if ($uri[0] == "tarefa"){
-		$controlador = new TarefaController($uri, $metodo);
-		
-	}elseif($uri[0] == "usuario"){
-		$controlador = new UsuarioController($uri, $metodo);
-		
-	}elseif($uri[0] == "etiqueta"){
-		$controlador = new EtiquetaController($uri, $metodo);
-		
-	}elseif($uri[0] == "prioridade"){
-		$controlador = new PrioridadeController($uri, $metodo);
-		
-	}elseif($uri[0] == "estado"){
-		$controlador = new EstadoController($uri, $metodo);
-		
-	}elseif($uri[0] == "listatarefas"){
-		$controlador = new ListatarefasController($uri, $metodo);
-		
-	}elseif($uri[0] == "quadro"){
-		$controlador = new QuadroController($uri, $metodo);
-		
-	}
-	*/
+	
 
 ?>
