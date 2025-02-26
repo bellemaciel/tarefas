@@ -7,19 +7,23 @@
         if(count($uri)==1){
             if($metodo == 'GET')
                return $this -> listar();
-            elseif ($metodo == 'POST')
-                return $this -> post();
-            
+            elseif ($metodo == 'POST'){
+                return $this -> post(); }
+                 
         }
         elseif(count($uri)==2){
             if($metodo == 'GET')
-            return $this -> get($uri[1]);//fazer retorno
+            return $this -> get($uri[1]);
         
-            elseif ($metodo == 'PUT')
+            elseif ($metodo == 'PUT'){
                 return $this -> put($uri[1]);
-            
+            }
+
             elseif ($metodo == 'DELETE')
                 return $this -> delete($uri[1]);
+            else{
+                echo "<br> | Erro, digite a opção correta na uri.|";
+            }
             
         }
     }

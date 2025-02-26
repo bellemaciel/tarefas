@@ -1,4 +1,9 @@
 <?php
+	require_once "views/quadro.php";
+	require_once "views/prioridade.php";
+	require_once "views/listatarefas.php";
+	require_once "views/etiqueta.php";
+	require_once "views/estado.php";
 	require_once "views/tarefa.php";
 	require_once "views/usuario.php";
 	require_once "controlador/controlador.php";
@@ -38,7 +43,7 @@
 		
 	}
 	catch (Exception $e){
-		echo "Página não encontrada!";
+		echo "INDEX: Página não encontrada!";
 	}
 	
 
